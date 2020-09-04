@@ -12,7 +12,7 @@ router.route('/add').post((req, res) => {
     const itemName = req.body.itemName;
     const description = req.body.description;
     const price = Number(req.body.price);
-    const stock = Number(req.body.stock)l
+    const stock = Number(req.body.stock);
 
     const newItem = new Item({
         itemNumber,
