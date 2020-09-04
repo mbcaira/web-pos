@@ -25,11 +25,25 @@ router.route('/add').post((req, res) => {
         .catch((err) => res.status(400).json('Error: '+err));
 });
 
-router.route('/delete').delete((req, res) => {
-    const itemNumber = req.body.itemNumber;
-
-    Item.deleteOne({itemNumber: itemNumber})
-        .then(() => res.json('Item successfully deleted.'))
+router.route('/:itemNumber').get((req, res) => {
+    Item.findOne({itemNumber: req.params.itemNumber})
+        .then((item) => res.json(item))
         .catch((err) => res.status(400).json('Error: '+err));
 });
+
+router.route('/:itemNumber').delete((req, res) => {
+    Item.findOneAndDelete({itemNumber: req.params.itemNumber})
+        .then(() => res.json('Item deleted.'))
+        .catch((err) => res.status(400).json('Error: ')+err);
+});
+
+router.route('/update/:itemNumber').put((req, res) => {
+    Item.findOneAndUpdate({itemNumber: req.params.itemNumber}, req.body.update)
+        .then((item) => {
+            item.save()
+                .then(() => res.json("Item update."))
+                .catch((err) => res.status(400).json('Error: '+err));
+        })
+});
+
 module.exports = router;
