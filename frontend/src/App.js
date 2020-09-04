@@ -1,12 +1,11 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/navbar.component";
+import Navbar from "./components/Navbar";
 import SaleTerminal from "./components/SaleTerminal";
 import InventoryList from "./components/InventoryList";
 import InventoryAdd from "./components/InventoryAdd";
-import InventoryUpdate from "InventoryUpdate";
-import CreateUser from "CreateUser";
+import InventoryUpdate from "./components/InventoryUpdate";
+import CreateUser from "./components/CreateUser";
 
 
 function App() {

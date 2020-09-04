@@ -1,0 +1,12 @@
+div {
+  font-family: 'Roboto', sans-serif;
+  font-size: 110%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.brand {
+  font-size: 110%;
+  font-weight: 700;
+}
+
