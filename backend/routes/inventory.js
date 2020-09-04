@@ -44,6 +44,7 @@ router.route('/update/:itemNumber').put((req, res) => {
                 .then(() => res.json("Item update."))
                 .catch((err) => res.status(400).json('Error: '+err));
         })
+        .catch((err) => res.status(400).json('Error: '+err));
 });
 
 module.exports = router;
