@@ -2,11 +2,11 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/navbar.component";
-import SaleTerminal from "./components/sale-terminal.component";
-import InventoryList from "./components/inventory-list.component";
-import InventoryAdd from "./components/inventory-add.component";
-import InventoryUpdate from "./components/inventory-update.component";
-import CreateUser from "./components/create-user.component";
+import SaleTerminal from "./components/SaleTerminal";
+import InventoryList from "./components/InventoryList";
+import InventoryAdd from "./components/InventoryAdd";
+import InventoryUpdate from "InventoryUpdate";
+import CreateUser from "CreateUser";
 
 
 function App() {
