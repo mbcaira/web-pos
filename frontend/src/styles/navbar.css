@@ -1,6 +1,15 @@
-* {
-  box-sizing: border-box;
+.navbar-custom {
+    background-color: white;
 }
-.brand {
-    font-weight: 700;
+
+.navbar-brand {
+    font-size: 1.8rem;
+}
+
+.nav-item {
+    font-size: 1.4rem;
+}
+
+.header {
+    background-color: white;
 }

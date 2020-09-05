@@ -2,25 +2,18 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import SaleTerminal from "./components/SaleTerminal";
-import InventoryList from "./components/InventoryList";
-import InventoryAdd from "./components/InventoryAdd";
-import InventoryUpdate from "./components/InventoryUpdate";
-import CreateUser from "./components/CreateUser";
-
+import Terminal from "./components/Terminal";
+import Inventory from "./components/Inventory";
 
 function App() {
   return (
     <Router>
-      <div className="container">
+      <div>
         <Navbar />
         <br/>
         <Route path="/" exact component={Home} />
-        <Route path="/terminal" exact component={SaleTerminal} />
-        <Route path="/inventory" exact component={InventoryList} />
-        <Route path="/inventory/add" exact component={InventoryAdd} />
-        <Route path="/inventory/update/:itemNumber" exact component={InventoryUpdate} />
-        <Route path="/user" exact component={CreateUser} />
+        <Route path="/terminal" exact component={Terminal} />
+        <Route path="/inventory" exact component={Inventory} />
       </div>
     </Router>
   );

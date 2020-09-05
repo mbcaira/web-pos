@@ -1,25 +1,17 @@
 import React from 'react';
 
-import "../styles/index.css"
+import Terminal from './Terminal';
+import Inventory from './Inventory';
+
 import "../styles/home.css"
 
-function SaleTerminal(props) {
+function Home(props) {
     return (
-        <div className="container-fluid">
-            <div className="row">
-                <div className="col-4 d-flex justify-content-center screen shadow">
-                    <h3>Inventory</h3>
-                    <div className="stock-list">
-
-                    </div>
-                </div>
-                <div className="col-6 screen shadow">
-                    <h3>Terminal</h3>
-                    <div className="terminal-screen"></div>
-                </div>
-            </div>
+        <div> 
+            <Inventory className="inventory"/>      
+            <Terminal className="terminal"/>   
         </div>
     );
 }
 
-export default SaleTerminal;
+export default Home;

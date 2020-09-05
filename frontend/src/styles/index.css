@@ -1,14 +1,5 @@
-html {
-  background-color: #c9c9c9;
-}
-
-div {
-  font-family: 'Roboto', sans-serif;
-  font-size: 110%;
-  margin-bottom: auto;
-}
-
 body {
-  background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    background-color: #D5D5D5;
 }
-
