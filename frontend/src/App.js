@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 import SaleTerminal from "./components/SaleTerminal";
 import InventoryList from "./components/InventoryList";
 import InventoryAdd from "./components/InventoryAdd";
@@ -14,7 +15,8 @@ function App() {
       <div className="container">
         <Navbar />
         <br/>
-        <Route path="/" exact component={SaleTerminal} />
+        <Route path="/" exact component={Home} />
+        <Route path="/terminal" exact component={SaleTerminal} />
         <Route path="/inventory" exact component={InventoryList} />
         <Route path="/inventory/add" exact component={InventoryAdd} />
         <Route path="/inventory/update/:itemNumber" exact component={InventoryUpdate} />

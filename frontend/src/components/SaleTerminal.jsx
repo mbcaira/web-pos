@@ -1,10 +1,10 @@
 import React from 'react';
 
+import "../styles/index.css"
+
 function SaleTerminal(props) {
     return (
-        <div>
-            <p>Sale terminal screen</p>
-        </div>
+        <div><p>Sale terminal dedicated.</p></div>
     );
 }
 
