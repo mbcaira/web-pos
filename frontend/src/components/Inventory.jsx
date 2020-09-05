@@ -5,9 +5,9 @@ import "../styles/inventory.css";
 function Inventory() {
     return (
         <div>
-            <div className="container shadow">
+            <div className="container inventory shadow">
                 <div className="row">
-                    <div className="title col-md">
+                    <div className="title col">
                     Inventory window
                     </div>
                 </div>

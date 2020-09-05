@@ -3,3 +3,8 @@ body {
     font-weight: 800;
     background-color: #D5D5D5;
 }
+
+.title {
+    text-align: center;
+    padding: 3px;
+}

@@ -7,9 +7,19 @@ import "../styles/home.css"
 
 function Home(props) {
     return (
-        <div> 
-            <Inventory className="inventory"/>      
-            <Terminal className="terminal"/>   
+        <div>
+            <div>
+                <div className="container home">
+                    <div className="row">
+                        <div className="col-5">
+                        <Inventory />
+                        </div>
+                        <div className="col">
+                        <Terminal />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
