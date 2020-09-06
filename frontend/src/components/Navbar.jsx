@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import "../styles/navbar.css";
+import "./styles/navbar.css";
 
 function Navbar() {
     return (
@@ -22,6 +22,7 @@ function Navbar() {
                             </li>
                         </ul>
                     </div>
+                    <button class="btn btn-outline-danger my-2 my-sm-0 float-right logout" type="submit">Logout</button>
                 </nav>
             </div>
         </div>

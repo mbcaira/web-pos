@@ -1,14 +1,14 @@
 import React from 'react';
 
-import "../styles/terminal.css";
+import "./styles/inventory.css"
 
-function Terminal(){
+function Inventory(){
     return (
         <div>
             <div className="container terminal shadow">
                 <div className="row">
                     <div className="title col">
-                    Terminal window
+                    Inventory
                     </div>
                 </div>
             </div>
@@ -16,4 +16,4 @@ function Terminal(){
     );
 }
 
-export default Terminal;
+export default Inventory;

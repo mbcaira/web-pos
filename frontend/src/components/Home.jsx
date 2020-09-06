@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Terminal from './Terminal';
-import Inventory from './Inventory';
+import Terminal from './terminal/Terminal'
+import Inventory from './inventory/Inventory';
 
-import "../styles/home.css"
+import "./styles/home.css"
 
 function Home(props) {
     return (
