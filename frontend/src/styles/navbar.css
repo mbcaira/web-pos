@@ -10,10 +10,10 @@
     font-size: 1.4rem;
 }
 
-.logout {
-    font-size: 1.4rem;
-}
-
 .header {
     background-color: white;
+}
+
+.dropdown-menu {
+    border: 0;
 }

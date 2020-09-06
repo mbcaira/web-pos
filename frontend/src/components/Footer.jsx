@@ -1,10 +1,8 @@
 import React from 'react';
 
-import "./styles/index.css"
-
 function Footer() {
     return (
-        <div>
+        <div className="container-fluid">
             <footer><p>Copyright © {new Date().getFullYear()}</p></footer>
         </div>
     );

@@ -1,0 +1,9 @@
+.terminal-container {
+    background-color: white;
+    border-radius: 300px;
+    padding: 7px;
+}
+
+.heading {
+    text-align: center;
+}

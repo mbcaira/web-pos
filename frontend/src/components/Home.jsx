@@ -1,22 +1,18 @@
 import React from 'react';
 
-import Terminal from './terminal/Terminal'
-import Inventory from './inventory/Inventory';
+import InventoryList from "./InventoryList";
+import Terminal from "./Terminal";
 
-import "./styles/home.css"
-
-function Home(props) {
+function Home(){
     return (
-        <div>
-            <div>
-                <div className="container home">
-                    <div className="row">
-                        <div className="col-5">
-                        <Inventory />
-                        </div>
-                        <div className="col">
-                        <Terminal />
-                        </div>
+        <div className="container-fluid">
+            <div className="home-container">
+                <div className="row">
+                    <div className="col">
+                        <InventoryList/>
+                    </div>
+                    <div className="col">
+                        <Terminal/>
                     </div>
                 </div>
             </div>
