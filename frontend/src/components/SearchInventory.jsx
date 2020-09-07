@@ -14,14 +14,6 @@ function SearchInventory() {
         stock: ""
     });
 
-    const [,setInventory] = useState([]);
-    
-    function getItems() {
-        Axios.get('http://localhost:5000/inventory')
-            .then(res => setInventory(res.data))
-            .catch((err) => console.log('Error: '+err));
-    }
-
     function handleChange(event) {
         const { name, value } = event.target;
 
@@ -33,18 +25,7 @@ function SearchInventory() {
     }
 
     function findItem(event) {
-        let url = 'http://localhost:5000/inventory/'+result.itemNumber
-        Axios.get(url)
-            .then(res => {
-                if (res.data.itemNumber === null) {
-                    getItems();
-                } else {
-                    setResult(res.data);
-                }
-            })
-            .catch((err) => console.log('Error: '+err));
-        event.preventDefault();
-
+        
         setResult({
             itemNumber: "",
             itemName: "",
@@ -52,6 +33,18 @@ function SearchInventory() {
             price: "",
             stock: ""
         });
+
+        let url = 'http://localhost:5000/inventory/'+result.itemNumber
+        Axios.get(url)
+            .then(res => {
+                if (res.data.itemNumber === null) {
+                    console.log("Cannot find item");
+                } else {
+                    setResult(res.data);
+                }
+            })
+            .catch((err) => console.log('Error: '+err));
+        event.preventDefault();
     }
 
     return (

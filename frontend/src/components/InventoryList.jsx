@@ -57,17 +57,3 @@ function InventoryList() {
 }
 
 export default InventoryList;
-
-// {items.map((item, index) => {
-//     return (
-//         <Item
-//             key={index}
-//             itemNumber={item.itemNumber}
-//             itemName={item.itemName}
-//             description={item.description}
-//             stock={item.stock}
-//             price={item.price}
-//             onDelete={deleteItem}
-//         />
-//     )
-// })}
