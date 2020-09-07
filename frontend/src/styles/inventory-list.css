@@ -1,14 +1,20 @@
 .inventory-list-container {
     background-color: white;
-    border-radius: 300px;
+    border-radius: 17px;
     padding: 7px;
 }
 
 .heading {
     text-align: center;
+    padding-top: 10px;
     font-size: 120%;
+}
+
+.column-heading {
+    text-align: center;
 }
 
 .col {
     text-align: center;
+    padding: 0.5rem;
 }
