@@ -43,7 +43,7 @@ router.route('/update/:itemNumber').put((req, res) => {
     Item.findOneAndUpdate({itemNumber: req.params.itemNumber}, req.body.update)
         .then((item) => {
             item.save()
-                .then(() => res.json("Item update."))
+                .then(() => res.json("Item updated."))
                 .catch((err) => res.status(400).json('Error: '+err));
         })
         .catch((err) => res.status(400).json('Error: '+err));
