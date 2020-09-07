@@ -5,11 +5,10 @@ import "../styles/terminal.css"
 function Terminal(props) {
     return (
         <div className="container-fluid">
-            <div className="terminal-container">
+            <div className="terminal-container shadow">
                 <div className="heading">Terminal</div>
-                <br/>
             </div>
         </div>
     );
 }
-export default Terminal
+export default Terminal;

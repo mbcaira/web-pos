@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 
 import Item from './Item';
+import SearchItem from './SearchInventory';
 
 import "../styles/inventory-list.css"
 
@@ -16,9 +17,9 @@ function InventoryList() {
     getItems();
     return (
         <div className="container-fluid">
-            <div className="inventory-list-container">
+            <SearchItem/>
+            <div className="inventory-list-container shadow">
                 <div className="heading">Inventory</div>
-                    <br/>
                     <div className="row column-heading">
                         <div className="col-sm">
                             Item Number

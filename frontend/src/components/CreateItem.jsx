@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 
 import InventoryList from './InventoryList'
 
 import "../styles/create-item.css"
 
-function CreateItem(props){
+function CreateItem(){
     const [item, setItem] = useState({
         itemNumber: "",
         itemName: "",
@@ -33,10 +33,10 @@ function CreateItem(props){
             price: "",
             stock: ""
         });
-
-        axios.post('http://localhost:5000/inventory/add', item)
+        
+        Axios.post('http://localhost:5000/inventory/add', item)
             .then(res => console.log(res.data))
-            .catch((err) => console.log('Error: '+err));
+            .catch((err) => console.log(err));
         event.preventDefault();
     }
 
@@ -83,7 +83,7 @@ function CreateItem(props){
                                 placeholder="Stock"
                             />
                             <div className="container-fluid">
-                                <button type="button" class="btn btn-success add-button" onClick={submitItem}>Add item</button>
+                                <button type="button" class="btn btn-success add-button btn-lg" onClick={submitItem}>Add item</button>
                             </div>
                         </div>
                     </form>

@@ -13,10 +13,12 @@ const itemSchema = new Schema({
     itemName: {
         type: String,
         required: true,
-        minlength: 3
+        minlength: 3,
+        uppercase: true
     },
     description: {
-        type: String
+        type: String,
+        uppercase: true
     },
     price: {
         type: Number,

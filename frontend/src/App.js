@@ -12,6 +12,7 @@ import Terminal from './components/Terminal';
 //Inventory components
 import InventoryList from './components/InventoryList';
 import CreateItem from './components/CreateItem';
+import EditItem from './components/EditItem';
 
 //Stylesheet
 import "./styles/index.css"
@@ -26,6 +27,7 @@ function App() {
         <Route path="/terminal" exact component={Terminal}/>
         <Route path="/inventory" exact component={InventoryList}/>
         <Route path="/inventory/add" exact component={CreateItem}/>
+        <Route path="/inventory/edit" exact component={EditItem}/>
         <Footer />
       </div>
     </Router>

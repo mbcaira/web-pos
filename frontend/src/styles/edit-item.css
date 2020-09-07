@@ -1,0 +1,26 @@
+.edit-item-container {
+    background-color: white;
+    border-radius: 17px;
+    padding: 7px;
+    margin: 0 15px 0 0;
+}
+
+.heading {
+    text-align: center;
+    font-size: 120%;
+}
+
+.col {
+    text-align: center;
+}
+
+
+
+.edit-item {
+    width: 70%;
+    margin: 10px auto;
+}
+
+.add-button {
+    margin: 10px;
+}
