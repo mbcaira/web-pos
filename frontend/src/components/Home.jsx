@@ -11,7 +11,7 @@ function Home(){
                     <div className="col">
                         <InventoryList/>
                     </div>
-                    <div className="col">
+                    <div className="col sticky-top">
                         <Terminal/>
                     </div>
                 </div>
