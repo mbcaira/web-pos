@@ -3,12 +3,3 @@ body {
     font-weight: 800;
     background-color: #D5D5D5;
 }
-
-footer {
-    position: absolute;
-    text-align: center;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    height: 2.5rem;
-}

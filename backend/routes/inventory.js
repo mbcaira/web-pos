@@ -23,7 +23,7 @@ router.route('/add').post((req, res) => {
     });
 
     newItem.save()
-        .then(() => res.json('Item added.'))
+        .then(() => res.json('Request made successfully.'))
         .catch((err) => res.status(400).json('Error: '+err));
 });
 
@@ -35,15 +35,15 @@ router.route('/:itemNumber').get((req, res) => {
 
 router.route('/:itemNumber').delete((req, res) => {
     Item.findOneAndDelete({itemNumber: req.params.itemNumber})
-        .then(() => res.json('Item deleted.'))
+        .then(() => res.json('Request made successfully.'))
         .catch((err) => res.status(400).json('Error: ')+err);
 });
 
 router.route('/update/:itemNumber').put((req, res) => {
-    Item.findOneAndUpdate({itemNumber: req.params.itemNumber}, req.body.update)
+    Item.findOneAndUpdate({itemNumber: req.params.itemNumber}, req.body)
         .then((item) => {
             item.save()
-                .then(() => res.json("Item updated."))
+                .then(() => res.json("Request made successfully."))
                 .catch((err) => res.status(400).json('Error: '+err));
         })
         .catch((err) => res.status(400).json('Error: '+err));

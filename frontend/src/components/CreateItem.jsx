@@ -71,16 +71,16 @@ function CreateItem(){
                                 placeholder="Description"
                             />
                             <input className="form-control create-item" type="number"
-                                name="price"
-                                onChange={handleChange}
-                                value={item.price}
-                                placeholder="Price"
-                            />
-                            <input className="form-control create-item" type="number"
                                 name="stock"
                                 onChange={handleChange}
                                 value={item.stock}
                                 placeholder="Stock"
+                            />
+                            <input className="form-control create-item" type="number"
+                                name="price"
+                                onChange={handleChange}
+                                value={item.price}
+                                placeholder="Price"
                             />
                             <div className="container-fluid">
                                 <button type="button" class="btn btn-success add-button btn-lg" onClick={submitItem}>Add item</button>

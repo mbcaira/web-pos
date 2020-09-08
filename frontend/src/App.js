@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 
 //Common components
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Home from './components/Home'
 
 //Terminal components
@@ -28,7 +27,6 @@ function App() {
         <Route path="/inventory" exact component={InventoryList}/>
         <Route path="/inventory/add" exact component={CreateItem}/>
         <Route path="/inventory/edit" exact component={EditItem}/>
-        <Footer />
       </div>
     </Router>
   );
