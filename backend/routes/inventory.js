@@ -43,10 +43,19 @@ router.route('/update/:itemNumber').post((req, res) => {
     Item.findOne({itemNumber: req.params.itemNumber})
         .then(item => {
             item.itemNumber = Number(req.params.itemNumber);
-            item.itemName = req.body.itemName;
-            item.description = req.body.description;
-            item.stock = Number(req.body.stock);
-            item.price = Number(req.body.price);
+
+            if (req.body.itemName !== "") {
+                item.itemName = req.body.itemName;
+            }
+            if (req.body.description !== "") {
+                item.description = req.body.description;;
+            }
+            if (req.body.stock !== "") {
+                item.stock = Number(req.body.stock);
+            }
+            if (req.body.price !== "") {
+                item.price = Number(req.body.price);
+            }
 
             item.save()
                 .then(() => res.json('Item updated.'))

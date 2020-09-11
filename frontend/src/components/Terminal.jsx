@@ -1,8 +1,9 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import "../styles/terminal.css"
 
 function Terminal(props) {
+    const [receipt, setReceipt] = useState([]);
+
     return (
         <div className="container-fluid">
             <div className="terminal-container shadow">
