@@ -39,14 +39,20 @@ router.route('/:itemNumber').delete((req, res) => {
         .catch((err) => res.status(400).json('Error: ')+err);
 });
 
-router.route('/update/:itemNumber').put((req, res) => {
-    Item.findOneAndUpdate({itemNumber: req.params.itemNumber}, req.body)
-        .then((item) => {
+router.route('/update/:itemNumber').post((req, res) => {
+    Item.findOne({itemNumber: req.params.itemNumber})
+        .then(item => {
+            item.itemNumber = Number(req.params.itemNumber);
+            item.itemName = req.body.itemName;
+            item.description = req.body.description;
+            item.stock = Number(req.body.stock);
+            item.price = Number(req.body.price);
+
             item.save()
-                .then(() => res.json("Request made successfully."))
+                .then(() => res.json('Item updated.'))
                 .catch((err) => res.status(400).json('Error: '+err));
         })
-        .catch((err) => res.status(400).json('Error: '+err));
+        .catch(err => res.status(400).json('Error: '+err));
 });
 
 module.exports = router;

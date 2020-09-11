@@ -17,11 +17,12 @@ function EditItem() {
     function handleChange(event) {
         const { name, value } = event.target;
 
-        updateItem(() => {
+        updateItem(prevItem =>{
             return {
-                [name]:value
+                ...prevItem,
+                [name]: value
             };
-        })
+        });
     }
 
     function deleteItem(event) {
@@ -47,11 +48,10 @@ function EditItem() {
             price: "",
             stock: ""
         });
-        console.log(item.itemNumber);
         let url = 'http://localhost:5000/inventory/update/'+item.itemNumber;
-        Axios.put(url)
+        Axios.post(url, item)
             .then(res => console.log(res.data))
-            .catch((res) => console.log(res.data));
+            .catch((err) => console.log(err));
         
         event.preventDefault();
     }
