@@ -6,10 +6,6 @@ import ReceiptItem from './ReceiptItem';
 import "../styles/terminal.css"
 
 function Terminal() {
-    const tax = 13;
-
-    const today = new Date()
-    const date = ''+today.getDate()+'/'+today.getMonth()+'/'+today.getFullYear()
     const [receipt, setReceipt] = useState([]);
     const [total, setTotal] = useState(0);
     const [totalTax, setTotalTax] = useState(0);
@@ -20,6 +16,11 @@ function Terminal() {
         stock: "",
         price: ""
     });
+
+    const tax = 13;
+
+    const today = new Date();
+    const date = ''+today.getDate()+'/'+today.getMonth()+'/'+today.getFullYear();
 
     function handleChange(event) {
         const { name, value } = event.target;
