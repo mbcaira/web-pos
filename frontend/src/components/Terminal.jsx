@@ -34,7 +34,7 @@ function Terminal() {
         event.preventDefault();
     }
 
-    function removeItem(oldItem) {
+    function removeItem() {
         setResult({
             itemNumber: "",
             itemName: "",
@@ -42,21 +42,32 @@ function Terminal() {
             stock: "",
             price: ""
         });
+        
+        if (result.itemNumber !== "") {
+            const currentReceipt = receipt.map(entry => entry.itemNumber);
+            let delIndex = currentReceipt.indexOf(+result.itemNumber, -1);
 
-        if (receipt.length !== 0) {
-            receipt.splice(receipt.indexOf(result.itemNumber), 1)
-            setTotalTax(prevTotalTax => {
-                let newTotalTax = Number(prevTotalTax) - oldItem.price*tax/100;
-                return newTotalTax;
-            })
-            setTotal(prevTotal => {
-                let newTotal = Number(prevTotal)-oldItem.price;
-                return newTotal;
-            })
+            if (delIndex !== -1) {
+                removeFromReceipt(receipt[delIndex], delIndex);
+            } else {
+                console.log('Item not found');
+            }
+        }
+        
+        function removeFromReceipt(item, index) {
+            if (receipt.length !== 0) {
+                setTotal(prevTotal => {
+                    return (prevTotal-item.price)
+                });
+                setTotalTax(prevTotalTax => {
+                    return (prevTotalTax-item.price*tax/100)
+                });
+                receipt.splice(index, 1);
+            }
         }
     }
 
-    function addItem(event) {
+    function addItem() {
         setResult({
             itemNumber: "",
             itemName: "",
@@ -65,27 +76,29 @@ function Terminal() {
             price: ""
         });
         
-        let url = 'http://localhost:5000/inventory/'+result.itemNumber;
-        Axios.get(url)
-            .then(res => {
-                if (res.data.itemNumber === null) {
-                    console.log('Error, item number not passed.')
-                } else {
-                    addToReceipt(res.data)
-                }
-            })
-            .catch((err) => console.log('Error: '+err));
-        
-        function addToReceipt(newItem) {
-            setReceipt(prevItem => {
-                return [...prevItem, newItem];
-            })
-            setTotal(prevTotal => {
-                return (prevTotal+newItem.price)
-            })
-            setTotalTax(prevTotalTax => {
-                return (prevTotalTax + newItem.price*tax/100)
-            })
+        if (result.itemNumber !== "") {
+            let url = 'http://localhost:5000/inventory/'+result.itemNumber;
+            Axios.get(url)
+                .then(res => {
+                    if (res.data.itemNumber === null) {
+                        console.log('Error, item number not passed.')
+                    } else {
+                        addToReceipt(res.data)
+                    }
+                })
+                .catch((err) => console.log('Error: '+err));
+            
+            function addToReceipt(newItem) {
+                setReceipt(prevItem => {
+                    return [...prevItem, newItem];
+                })
+                setTotal(prevTotal => {
+                    return (prevTotal+newItem.price)
+                })
+                setTotalTax(prevTotalTax => {
+                    return (prevTotalTax + newItem.price*tax/100)
+                })
+            }
         }
     }
 
@@ -129,7 +142,7 @@ function Terminal() {
                     <div className="row">
                         <div className="col">Date: {date}</div>
                         <div className="col">Tax ({tax}%): ${Number(totalTax.toFixed(2))}</div>
-                        <div className="col">Total: ${(total+totalTax).toFixed(2)}</div>
+                        <div className="col">Total: ${Number((total+totalTax).toFixed(2))}</div>
                     </div>
                 </div>
             </div>
