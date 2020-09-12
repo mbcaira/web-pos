@@ -9,6 +9,7 @@ function Terminal() {
     const [receipt, setReceipt] = useState([]);
     const [total, setTotal] = useState(0);
     const [totalTax, setTotalTax] = useState(0);
+
     const [result, setResult] = useState({
         itemNumber: "",
         itemName: "",
@@ -103,6 +104,34 @@ function Terminal() {
         }
     }
 
+    function processTransaction() {
+        let update = {
+            itemNumber: "",
+            itemName: "",
+            description: "",
+            stock: "",
+            price: ""
+        }
+        let url = 'http://localhost:5000/inventory/'
+        if (receipt.length !== 0) {
+            receipt.forEach(item => {
+                Axios.get(url+item.itemNumber)
+                    .then(res => {
+                        update.stock = res.data.stock-1;
+                        Axios.put(url+'update/'+item.itemNumber, update)
+                            .then(() => console.log('Update request sent.'))
+                            .catch((err) => console.log('Error: '+err));
+                    })
+                    .catch((err) => console.log('Error: '+err));
+            })
+            setReceipt([]);
+            setTotal(0);
+            setTotalTax(0);
+        } else {
+            console.log('Empty receipt, nothing to do.')
+        }
+    }
+
     return (
         <div className="container-fluid">
             <div className="terminal-container shadow">
@@ -120,8 +149,10 @@ function Terminal() {
                         onClick={removeItem} 
                     >Remove</button>
                     <button className="btn btn-primary my-2 w-100 finish-button" type="button" 
+                        onClick={processTransaction}
                     >Process Transaction</button>
                 </form>
+                
                 <div className="receipt-container">
                     <div className="row">
                         <div className="col">Item Number</div>
