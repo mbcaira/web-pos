@@ -39,7 +39,7 @@ router.route('/:itemNumber').delete((req, res) => {
         .catch((err) => res.status(400).json('Error: ')+err);
 });
 
-router.route('/update/:itemNumber').post((req, res) => {
+router.route('/update/:itemNumber').put((req, res) => {
     Item.findOne({itemNumber: req.params.itemNumber})
         .then(item => {
             item.itemNumber = Number(req.params.itemNumber);
