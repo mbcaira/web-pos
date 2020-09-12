@@ -4,7 +4,13 @@
     padding: 7px;
 }
 
+
 .heading {
     text-align: center;
     font-size: 120%;
 }
+
+.terminal-item {
+    padding: 10px;
+}
+
