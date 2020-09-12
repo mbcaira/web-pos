@@ -37,18 +37,20 @@ function InventoryList() {
                             Price
                         </div>
                     </div>
-                    {inventory.map((item, index) => {
-                        return (
-                            <Item
-                                key={index}
-                                itemNumber={item.itemNumber}
-                                itemName={item.itemName}
-                                description={item.description}
-                                stock={item.stock}
-                                price={item.price}
-                            />
-                        )
-                    })}
+                    <div className="items-container">
+                        {inventory.map((item, index) => {
+                            return (
+                                <Item
+                                    key={index}
+                                    itemNumber={item.itemNumber}
+                                    itemName={item.itemName}
+                                    description={item.description}
+                                    stock={item.stock}
+                                    price={item.price}
+                                />
+                            )
+                        })}
+                    </div>
                 <div>
             </div>
         </div>
