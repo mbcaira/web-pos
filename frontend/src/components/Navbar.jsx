@@ -27,7 +27,7 @@ function Navbar() {
                     </li>
                 </ul>
             </div>
-            <button className="btn btn-lg btn-outline-danger my-2" type="submit">Logout</button>
+            {/* <button className="btn btn-lg btn-outline-danger my-2" type="submit">Logout</button> */}
         </nav>  
     );
 }

@@ -47,7 +47,7 @@ function Terminal() {
         
         if (result.itemNumber !== "") {
             const currentReceipt = receipt.map(entry => entry.itemNumber);
-            let delIndex = currentReceipt.indexOf(+result.itemNumber, -1);
+            let delIndex = currentReceipt.indexOf(+result.itemNumber, 0);
 
             if (delIndex !== -1) {
                 removeFromReceipt(receipt[delIndex], delIndex);

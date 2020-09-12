@@ -19,10 +19,8 @@ connection.once('open', () => {
 });
 
 const inventoryRouter = require('./routes/inventory');
-const usersRouter = require('./routes/users');
 
 app.use('/inventory', inventoryRouter);
-app.use('/users', usersRouter);
 
 app.listen(port, () => {
     console.log('Server is running on port: '+port);
