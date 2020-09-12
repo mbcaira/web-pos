@@ -49,7 +49,7 @@ function EditItem() {
             stock: ""
         });
         let url = 'http://localhost:5000/inventory/update/'+item.itemNumber;
-        Axios.post(url, item)
+        Axios.put(url, item)
             .then(res => console.log(res.data))
             .catch((err) => console.log(err));
         
@@ -66,7 +66,7 @@ function EditItem() {
                 <div className="edit-item-container">
                     <div className="heading">Edit Item
                     </div>
-                    <p className="instructions">Edit an item by entering its item number and selecting the fields you wish to update and pressing edit</p>
+                    <p className="instructions">Edit an item by entering its item number and editing the fields you wish to update and pressing edit</p>
                     <p className="instructions">Delete an item by entering its item number and pressing delete</p>
                     <form autoComplete="off">
                         <div className="form-group mx-sm-3 mb-2">
