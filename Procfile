@@ -1,1 +1,0 @@
-web: cd backend && node server && cd .. && cd frontend && npm start
