@@ -1,0 +1,28 @@
+{
+  "name": "web-pos",
+  "version": "1.0.0",
+  "description": "Point of sale web app on a MERN stack",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5",
+    "react-router-dom": "^5.2.0",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-canaran/web-pos.git"
+  },
+  "author": "Michael Canaran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michael-canaran/web-pos/issues"
+  },
+  "homepage": "https://github.com/michael-canaran/web-pos#readme"
+}
