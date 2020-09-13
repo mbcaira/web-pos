@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/michael-canaran/web-pos/issues"
   },
+  "engines": {
+    "node": "12.18.3"
+  },
   "homepage": "https://github.com/michael-canaran/web-pos#readme"
 }
