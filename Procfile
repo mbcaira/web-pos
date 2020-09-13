@@ -1,1 +1,1 @@
-web: cd backend && node server
+web: cd backend && node server ** cd ..
